@@ -1,0 +1,35 @@
+.one{
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: #007bff
+}
+.css{
+  width: 70%;
+  margin-left: 15%;
+}
+#classic-editor{
+  margin-left: 45%;
+  margin-top: 2%;
+}
+.two{
+  margin-left: 15%;
+  padding-bottom: 1%;
+  margin-top: -1.5%;
+}
+.three{
+  margin-left: 15%;
+  padding-bottom: 1%;
+  margin-top: -1.5%;
+}
+.four{
+
+  padding-top: 1%;
+  margin-left: 80%;
+}
+#classic-editor {
+  width: 40% !important;
+  max-width: 300px !important;
+}
+

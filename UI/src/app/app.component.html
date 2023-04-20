@@ -1,0 +1,46 @@
+<h1 class="one">Send a Mail</h1>
+<div class="row mt-4">
+  <div class="col-md-2" style="margin-left: 12%;">
+    <label for="to">To:</label>
+  </div>
+  <div class="col-md-10 two">
+    <input type="text" id="to" class="form-control" style="width: 82%;"  [(ngModel)]="to">
+  </div>
+</div>
+<div class="row mt-4">
+  <div class="col-md-2" style="margin-left: 10%;">
+    <label for="subject">Subject:</label>
+  </div>
+  <div class="col-md-10 three">
+    <input type="text" id="subject" class="form-control" style="width: 82%;" [(ngModel)]="subject">
+  </div>
+</div>
+<ngx-dropzone class="css" (change)="onSelect($event)" accept=".csv">
+  <ngx-dropzone-label>Drag & Drop .csv Documents here!</ngx-dropzone-label>
+  <ngx-dropzone-preview
+    *ngFor="let f of files"
+    [removable]="true"
+    (removed)="onRemove(f)"
+  >
+    <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+  </ngx-dropzone-preview>
+</ngx-dropzone>
+
+<ckeditor #editor
+[data]="editorData"
+[editor]="Editor"
+id="classic-editor"
+name="classic-editor"
+(ready)="onReady($event)"
+(change)="onChange($event)"
+(focus)="onFocus($event)"
+(blur)="onBlur($event)"
+[(ngModel)]="content"
+>
+</ckeditor>
+
+<div class="row mt-4 four">
+  <div class="col-md-12">
+    <button class="btn btn-primary mr-2" (click)="sendmail()">Send</button>
+  </div>
+</div>
